@@ -12,7 +12,7 @@ $artist->setEmployeeId(1234);
 $artist->setNumberOfHours(8);
 $artist->setSalaryRate(200);
 $artist->calculateSalary($artist->getNumberOfHours());
-echo 'Artist salarary is: ' . $artist->getTotalSalary() .PHP_EOL;
+echo 'Artist salary is: ' . $artist->getTotalSalary() .PHP_EOL;
 $logger->writeToLog($artist);
 
 $tailor = new Tailor();
@@ -20,7 +20,7 @@ $tailor->setEmployeeId(1235);
 $tailor->setNumberOfClothes(8);
 $tailor->setSalaryRate(100);
 $tailor->calculateSalary($tailor->getNumberOfClothes());
-echo 'Tailor salarary is: ' . $tailor->getTotalSalary() .PHP_EOL;
+echo 'Tailor salary is: ' . $tailor->getTotalSalary() .PHP_EOL;
 $logger->writeToLog($tailor);
 
 
