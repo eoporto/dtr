@@ -5,14 +5,25 @@ function __autoload($className)
     require_once("classes/$className.php");
 }
 
+$logger = new Logger();
 
 $artist = new Artist();
+$artist->setEmployeeId(1234);
 $artist->setNumberOfHours(8);
 $artist->setSalaryRate(200);
-echo 'Artis salarary is: ' . $artist->calculateSalary($artist->getNumberOfHours()) .PHP_EOL;
+$artist->calculateSalary($artist->getNumberOfHours());
+echo 'Artis salarary is: ' . $artist->getTotalSalary() .PHP_EOL;
+$logger->writeToLog($artist);
 
 $tailor = new Tailor();
+$tailor->setEmployeeId(1235);
 $tailor->setNumberOfClothes(8);
 $tailor->setSalaryRate(100);
-echo 'Tailor salarary is: ' . $tailor->calculateSalary($tailor->getNumberOfClothes()) .PHP_EOL;
+$tailor->calculateSalary($tailor->getNumberOfClothes());
+echo 'Artis salarary is: ' . $tailor->getTotalSalary() .PHP_EOL;
+$logger->writeToLog($tailor);
+
+
+//debug
+$logger->dumpLog();
 ?>

@@ -6,6 +6,30 @@
 class Employee implements IEmployee
 {
     private $salary_rate;
+    private $employee_id;
+    private $total_salary;
+
+    /**
+     * Set employee ID.
+     *
+     * @param integer $employee_id the employeeyee ID
+     *
+     * @return null
+     */
+    public function setEmployeeId($employee_id)
+    {
+        $this->employee_id = $employee_id;
+    }
+
+    /**
+     * Get employee ID.
+     *
+     * @return integer
+     */
+    public function getEmployeeId()
+    {
+        return $this->employee_id;
+    }
 
     /**
      * Set salary rate.
@@ -37,7 +61,17 @@ class Employee implements IEmployee
      */
     public function calculateSalary($work_done)
     {
-        return $this->salary_rate * $work_done;
+        $this->total_salary =  $this->salary_rate * $work_done;
+    }
+
+    /**
+     * Get Total salary.
+     *
+     * @return integer
+     */
+    public function getTotalSalary()
+    {
+        return $this->total_salary;
     }
 }
 ?>
